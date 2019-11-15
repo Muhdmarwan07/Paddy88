@@ -548,7 +548,7 @@
                                                                 Total
                                                             </td>
                                                             <td class="singel-check total-check pull-right">
-                                                                RM {{Cart::total()}}
+                                                                RMm <?php echo Cart::total(); ?>
                                                             </td>
                                                         </tr>
                                                         <!-- <tr class="check-product-list">

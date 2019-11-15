@@ -20,7 +20,7 @@ Route::get('/sellerdashboard', 'SuperSellerController@indexx');
 Route::get('/logout','SuperSellerController@seller_logout');
 Route::get('/seller', 'SellerController@indexx');
 Route::post('/seller-dashboard', 'SellerController@sellerdashboard');
-Route::get('/seller-manage-order','CheckoutController@manage_order');
+Route::get('/seller-manage-order','CheckoutController@seller_manage_order');
 
 //seller category
 Route::get('/seller-add-category','CategoryController@indexx');
