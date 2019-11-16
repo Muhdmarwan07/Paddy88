@@ -111,27 +111,27 @@ Route::get('/unactive_slider/{slider_id}','SliderController@unactive_slider');
 Route::get('/active_slider/{slider_id}','SliderController@active_slider');
 Route::get('/delete-slider/{slider_id}','SliderController@delete_slider');
 
-// //stripe payment
-// use Illuminate\Http\Request;
-// Route::post ( '/payment', function (Request $request)
-// {
+//stripe payment
+use Illuminate\Http\Request;
+Route::post ( '/payment', function (Request $request)
+{
 
-// 	\Stripe\Stripe::setApiKey ( 'sk_test_9EjIb0s1ijfAQMsI8bEZctfY00fQ89Csk2' );
-// 	try {
-// 			\Stripe\Charge::create ( array (
+	\Stripe\Stripe::setApiKey ( 'sk_test_9EjIb0s1ijfAQMsI8bEZctfY00fQ89Csk2' );
+	try {
+			\Stripe\Charge::create ( array (
 
-// 				"amount" => $request->input('amount')*100,
-// 				"currency" => "usd",
-// 				"source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
-// 				"description" => "Test payment."
-// 			) );
-// 			Session::flash ( 'success-message', 'Payment done successfully !' );
-// 			Cart::destroy();
-// 			return Redirect::to('/order-complete');
-// 		}
-// 	 catch ( \Exception $e )
-// 	{
-// 		Session::flash ( 'fail-message', "Error! Please Try again." );
-// 		return Redirect::back ();
-// 	 }
-// });
+				"amount" => $request->input('amount')*100,
+				"currency" => "usd",
+				"source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
+				"description" => "Test payment."
+			) );
+			Session::flash ( 'success-message', 'Payment done successfully !' );
+			Cart::destroy();
+			return Redirect::to('/order-complete');
+		}
+	 catch ( \Exception $e )
+	{
+		Session::flash ( 'fail-message', "Error! Please Try again." );
+		return Redirect::back ();
+	 }
+});
