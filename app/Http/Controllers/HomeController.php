@@ -76,6 +76,7 @@ class HomeController extends Controller
             ->with('pages.product_detail',$manage_product_by_detail);
     }
 
+<<<<<<< HEAD
     public function shop()
     {
         $all_published_product=DB::table('tbl_products')
@@ -104,6 +105,8 @@ class HomeController extends Controller
     //     }
     // }
 
+=======
+>>>>>>> parent of 86cdb6e... no message
 
 
 }
