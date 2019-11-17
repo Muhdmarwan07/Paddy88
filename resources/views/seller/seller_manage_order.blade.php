@@ -1,5 +1,5 @@
-@extends('admin_layout')
-@section('admin_content')
+@extends('seller_layout')
+@section('seller_content')
 
 <div class="breadcome-area">
                 <div class="container-fluid">
@@ -19,7 +19,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Add Category</span>
+                                            <li><span class="bread-blod">Order Details</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -41,7 +41,6 @@
                                                 }
                                                 ?>
                                         </p> 
-
  <div class="data-table-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
@@ -49,7 +48,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1><font color="white">Add</font> <span class="table-project-n"><font color="white">Category</font></span> </h1>
+                                    <h1><font color="white">Order</font> <span class="table-project-n"><font color="white">Details</font></span> </h1>
                                 </div>
                             </div>
 
@@ -68,53 +67,54 @@
                                             <tr>
                                                 <!-- <th data-field="state" data-checkbox="true"></th> -->
                                                 <!-- <th data-field="id"><font color="white">ID</font></th> -->
-                                                <th data-field="name" data-editable="true"><font color="white">Category ID</font></th>
-                                                <th data-field="company" data-editable="true"><font color="white">Category Name</font></th>
-                                                <th data-field="price" data-editable="true"><font color="white">Category Description</font></th>
-												<!-- <th data-field="date" data-editable="true"><font color="white">Date</font></th> -->
-												 <th data-field="task" data-editable="true"><font color="white">Publication Status</font></th>
-                                                <!--  <th data-field="task" data-editable="true"><font color="white">Status</font></th> -->
-												<!-- <th data-field="email" data-editable="true"><font color="white">Total Sales</font></th> -->
-                                                <th data-field="action"><font color="white">Action</font></th>
+                                                <th data-field="name" data-editable="true"><font color="white">Order ID</font></th>
+                                                <th data-field="company" data-editable="true"><font color="white">Customer Name</font></th>
+                                                <th data-field="name" data-editable="true"><font color="white">Product Name</font></th>
+                                                <th data-field="name" data-editable="true"><font color="white">Product Price</font></th>
+                                                <th data-field="name" data-editable="true"><font color="white">Quantity</font></th>
+                                                <!-- <th data-field="action"><font color="white">Action</font></th> -->
                                             </tr>
                                         </thead>
-                                        @foreach($all_category_info as $v_category)
+                                        @foreach($all_order_info as $v_order)
                                         <tbody>
                                             <tr>
                                                 <!-- <td></td> -->
-                                                <!-- <td>{{$v_category->publication_status}}</td> -->
-                                                <td>{{$v_category->category_id}}</td>
-                                                <td>{{$v_category->category_name}}</td>
-												<td>{{$v_category->category_description}}</td>
-                                                <td class="center">
-                                                    @if($v_category->publication_status==1)
+                                                
+                                                <td>{{$v_order->order_id}}</td>
+                                                <td>{{$v_order->customer_name}}</td>
+                                                <td>{{$v_order->product_name}}</td>
+                                                <td>{{$v_order->product_price}}</td>
+                                                <td>{{$v_order->product_sales_quantity}}</td>
+											
+                                               <!--  <td class="center">
+                                                   
                                                         <span class="label label-success">Active</span>
-                                                    @else
+                                                    
                                                         <span class="label label-danger">Unactive</span>
-                                                    @endif
-                                                </td>
+                                                    
+                                                </td> -->
 												<!-- <td>Jul 14, 2017</td> -->
                                                 <!-- <td class="center">
                                                     <span class="label label-success">Active</span></td> -->
-												<td class="center">
-                                                    @if($v_category->publication_status==1)
-                                                        <a class="btn btn-danger" href="{{URL::to('/unactive_category/'.$v_category->category_id)}}">
+												<!-- <td class="center"> -->
+                                                    
+                                                        <!-- <a class="btn btn-danger" href="{{URL::to('/unactive/'.$v_order->order_id)}}">
                                                          KO
 
-                                                        </a>
-                                                    @else
-                                                         <a class="btn btn-success" href="{{URL::to('/active_category/'.$v_category->category_id)}}">
+                                                        </a> -->
+                                                    
+                                                         <!-- <a class="btn btn-success" href="{{URL::to('/active/'.$v_order->order_id)}}">
                                                             OK
-                                                         </a>
-                                                    @endif
+                                                         </a> -->
+                                                    
                                                         
-                                                    <a class="btn btn-info" href="{{URL::to('/edit-category/'.$v_category->category_id)}}">Edit</a>
+                                                   <!--  <a class="btn btn-info" href="{{URL::to('/edit/'.$v_order->order_id)}}">Edit</a> -->
                                                    
-                                                    <a class="btn btn-danger" href="{{URL::to('/delete-category/'.$v_category->category_id)}}" id="delete" onclick="return confirm('Are you sure you want to delete this item?')">
+                                                    <!-- <a class="btn btn-danger" href="{{URL::to('/delete-category/'.$v_order->order_id)}}" id="delete" onclick="return confirm('Are you sure you want to delete this item?')">
                                                       Delete  
 
-                                                    </a>                                   
-                                                </td>
+                                                    </a>   -->                                 
+                                                <!-- </td> -->
                                                 <!-- <td class="datatable-ct"><i class="fa fa-check"></i> 
                                                 </td> -->
                                             </tr>

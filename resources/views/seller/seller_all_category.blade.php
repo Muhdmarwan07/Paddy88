@@ -1,5 +1,5 @@
-@extends('admin_layout')
-@section('admin_content')
+@extends('seller_layout')
+@section('seller_content')
 
 <div class="breadcome-area">
                 <div class="container-fluid">
@@ -41,7 +41,6 @@
                                                 }
                                                 ?>
                                         </p> 
-
  <div class="data-table-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
