@@ -75,6 +75,7 @@ class HomeController extends Controller
         return view('layout')
             ->with('pages.product_detail',$manage_product_by_detail);
     }
+
     public function shop()
     {
         $all_published_product=DB::table('tbl_products')
@@ -102,4 +103,7 @@ class HomeController extends Controller
     //         return Redirect::to('/admin')->send();
     //     }
     // }
+
+
+
 }
