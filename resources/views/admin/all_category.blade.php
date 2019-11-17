@@ -41,7 +41,6 @@
                                                 }
                                                 ?>
                                         </p> 
-
  <div class="data-table-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">

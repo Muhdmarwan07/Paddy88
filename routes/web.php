@@ -15,36 +15,14 @@
 //frontend site.................................................................
 Route::get('/', 'HomeController@index');
 
-//seller route
-Route::get('/sellerdashboard', 'SuperSellerController@indexx');
-Route::get('/logout','SuperSellerController@seller_logout');
-Route::get('/seller', 'SellerController@indexx');
-Route::post('/seller-dashboard', 'SellerController@sellerdashboard');
-Route::get('/seller-manage-order','CheckoutController@seller_manage_order');
 
-//seller category
-Route::get('/seller-add-category','CategoryController@indexx');
-Route::get('/seller-all-category','CategoryController@seller_all_category');
-Route::get('/seller-edit-category/{category_id}','CategoryController@seller_edit_category');
-Route::post('/seller-update-category/{category_id}','CategoryController@seller_update_category');
-Route::post('/seller-save-category','CategoryController@seller_save_category');
-
-//seller manufacture
-Route::get('/seller-add-manufacture','ManufactureController@indexx');
-Route::get('/seller-all-manufacture','ManufactureController@seller_all_manufacture');
-
-//seller product
-Route::get('/seller-add-product','ProductController@indexx');
-Route::get('/seller-all-product','ProductController@seller_all_product');
-
-
-//payment
 Route::get('/order-complete', 'PaymentController@order_complete');
 
 //show category wise product here
 Route::get('/product_by_category/{category_id}', 'HomeController@show_product_by_category');
 Route::get('/product_by_manufacture/{manufacture_id}', 'HomeController@show_product_by_manufacture');
 Route::get('/view_product/{product_id}', 'HomeController@product_detail_by_id');
+Route::get('/shop', 'HomeController@shop');
 
 //cart are here
 Route::post('/add-to-cart','CartController@add_to_cart');
@@ -57,7 +35,6 @@ Route::get('/login-check','CheckoutController@login_check');
 Route::post('/customer_registration','CheckoutController@customer_registration');
 Route::get('/checkout','CheckoutController@checkout');
 Route::post('/save-shipping-details','CheckoutController@save_shipping_details');
-Route::get('/manage-order','CheckoutController@manage_order');
 
 //customer login & logout
 Route::post('/customer-login','CheckoutController@customer_login');
